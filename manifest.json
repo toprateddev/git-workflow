@@ -1,0 +1,41 @@
+{
+  "name": "oDesk Top Navigation",
+  "manifest_version": 2,
+  "description": "This extension shows a different appearance.",
+  "version": "0.1",
+  "background": {
+    "scripts": ["assets/js/background.js"],
+	"persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.odesk.com/*",
+        "http://www.odesk.com/*"
+      ],
+      "js": [
+            "assets/js/jquery-1.10.2.min.js",
+            "assets/js/common.js",
+            "assets/js/odesk-message.js",
+            "assets/js/content_script.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  
+  "web_accessible_resources": [
+      "assets/js/jquery-1.10.2.min.js",
+  	  "assets/js/jquery-1.10.2.min.map",
+
+      "assets/css/message-style.css",
+
+      "https://www.odesk.com/*",
+      "http://www.odesk.com/*"
+  ],
+	"permissions": [
+    "https://www.odesk.com/*",
+    "http://www.odesk.com/*"
+  ]
+}
+
